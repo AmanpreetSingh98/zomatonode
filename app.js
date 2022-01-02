@@ -6,7 +6,7 @@ var cors = require('cors');
 var mongoclient = mongo.MongoClient;
 dotenv.config();
 
-var mongourl = process.env.mongoliveurl;
+var mongourl = "mongodb+srv://Robin:amanrobin@cluster0.q4zxq.mongodb.net/newdb?retryWrites=true&w=majority";
 var port = process.env.PORT || 3333;
 var app = express();
 app.use(bodyparser.urlencoded({extended:true}));
