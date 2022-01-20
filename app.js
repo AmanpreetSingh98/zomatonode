@@ -150,7 +150,7 @@ app.delete('/deleteorder',(req,res) => {
 })
 
 /*______Return orders data_________ */
-app.post('/orders',(req,res) => {
+app.get('/orders',(req,res) => {
     db.collection('orders').find().toArray((err,result) => {
         if(err) throw err;
         res.send(result);
