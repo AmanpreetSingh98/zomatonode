@@ -151,7 +151,11 @@ app.delete('/deleteorder',(req,res) => {
 
 /*______Return orders data_________ */
 app.get('/orders',(req,res) => {
-    db.collection('orders').find().toArray((err,result) => {
+    var query = {};
+    if(req.query.email){
+        query = {"email":req.query.email}
+    }
+    db.collection('orders').find(query).toArray((err,result) => {
         if(err) throw err;
         res.send(result);
     })
